@@ -45,7 +45,7 @@ const updatePost = async (req, res) => {
         where:{id: +postId}
     })
     if(!checkId){
-        return res(404).json({message: "존재하지 않는 메세지 입니다"})
+        return res(404).json({message: "존재하지 않는 포스트 입니다"})
     }
     let putOne = await prisma.posts.update({
         data:{title, content},
@@ -64,7 +64,7 @@ try{
         where:{id: +postId}
     })
     if(!checkId){
-        return res(404).json({message: "존재하지 않는 메세지 입니다"})
+        return res(404).json({message: "존재하지 않는 포스트 입니다"})
     }
 
     await prisma.posts.delete({
